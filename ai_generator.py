@@ -108,8 +108,7 @@ HISOBOT MA'LUMOTLARI:
 """
 
     if description:
-        prompt += f"
-- Qo'shimcha ma'lumot: {description}"
+        prompt += f"- Qo'shimcha ma'lumot: {description}"
 
     prompt += """
 
@@ -163,8 +162,7 @@ ABFALLNACHWEIS DATEN:
 """
 
     if description:
-        prompt += f"
-- Zusätzliche Informationen: {description}"
+        prompt += f"- Zusätzliche Informationen: {description}"
 
     prompt += """
 
@@ -266,8 +264,7 @@ def generate_waste_summary(reports: list, language: str = "uz") -> Optional[str]
 
 """
             for i, report in enumerate(reports, 1):
-                prompt += f"{i}. {report['waste_type']} - {report['quantity']} kg ({report['report_date']})
-"
+                prompt += f"{i}. {report['waste_type']} - {report['quantity']} kg ({report['report_date']})"
 
             prompt += """
 TALABLAR:
@@ -281,8 +278,7 @@ TALABLAR:
 
 """
             for i, report in enumerate(reports, 1):
-                prompt += f"{i}. {report['waste_type']} - {report['quantity']} kg ({report['report_date']})
-"
+                prompt += f"{i}. {report['waste_type']} - {report['quantity']} kg ({report['report_date']})"
 
             prompt += """
 ANFORDERUNGEN:

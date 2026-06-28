@@ -149,12 +149,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Til tanlash taklif qilish
     welcome_text = (
-        "👋 *EcoDoc ga xush kelibsiz!*
-
-"
-        "Bu bot ekologik chiqindi hujjatlarini AI yordamida avtomat yaratadi.
-
-"
+        "👋 *EcoDoc ga xush kelibsiz!*\n"
+        "Bu bot ekologik chiqindi hujjatlarini AI yordamida avtomat yaratadi.\n"
         "🌍 Tilni tanlang / Sprache wählen:"
     )
 
@@ -183,44 +179,24 @@ async def language_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Tilga qarab xabar
     if lang_code == "uz":
         text = (
-            "✅ *O'zbek tili tanlandi!*
-
-"
-            "🏢 EcoDoc - ekologik chiqindi hujjatlarini avtomatlashtiruvchi bot.
-
-"
-            "*Imkoniyatlar:*
-"
-            "• 🏢 Korxona ma'lumotlarini saqlash
-"
-            "• 📋 AI yordamida professional hisobot
-"
-            "• 📄 Word (.docx) hujjat yaratish
-"
-            "• 📁 Hisobotlar arxivi
-
-"
+            "✅ *O'zbek tili tanlandi!*\n"
+            "🏢 EcoDoc - ekologik chiqindi hujjatlarini avtomatlashtiruvchi bot.\n"
+            "*Imkoniyatlar:*"
+            "• 🏢 Korxona ma'lumotlarini saqlash"
+            "• 📋 AI yordamida professional hisobot"
+            "• 📄 Word (.docx) hujjat yaratish"
+            "• 📁 Hisobotlar arxivi\n"
             "Quyidagi bo'limlardan birini tanlang:"
         )
     else:
         text = (
-            "✅ *Deutsch ausgewählt!*
-
-"
-            "🏢 EcoDoc - Automatisiert ökologische Abfallberichte mit KI.
-
-"
-            "*Funktionen:*
-"
-            "• 🏢 Unternehmensdaten speichern
-"
-            "• 📋 Professioneller KI-Bericht
-"
-            "• 📄 Word (.docx) Dokument erstellen
-"
-            "• 📁 Berichtsarchiv
-
-"
+            "✅ *Deutsch ausgewählt!*\n"
+            "🏢 EcoDoc - Automatisiert ökologische Abfallberichte mit KI.\n"
+            "*Funktionen:*"
+            "• 🏢 Unternehmensdaten speichern"
+            "• 📋 Professioneller KI-Bericht"
+            "• 📄 Word (.docx) Dokument erstellen"
+            "• 📁 Berichtsarchiv\n"
             "Wählen Sie einen Bereich:"
         )
 
@@ -312,21 +288,15 @@ async def start_add_company(query, language: str):
     """
     if language == "uz":
         text = (
-            "🏢 *Yangi korxona qo'shish*
-
-"
-            "Korxona nomini kiriting:
-"
-            "(masalan: "O'zbekiston Plastik MCHJ")"
+            "🏢 *Yangi korxona qo'shish*\n"
+            "Korxona nomini kiriting:"
+            "(masalan: 'O'zbekiston Plastik MCHJ')"
         )
     else:
         text = (
-            "🏢 *Neues Unternehmen hinzufügen*
-
-"
-            "Geben Sie den Firmennamen ein:
-"
-            "(z.B.: "Deutschland Recycling GmbH")"
+            "🏢 *Neues Unternehmen hinzufügen*\n"
+            "Geben Sie den Firmennamen ein:"
+            "(z.B.: 'Deutschland Recycling GmbH')"
         )
 
     await query.edit_message_text(
@@ -351,11 +321,9 @@ async def company_name_handler(update: Update, context: ContextTypes.DEFAULT_TYP
     context.user_data["company"] = {"name": name}
 
     if language == "uz":
-        text = "📍 Korxona manzilini kiriting:
-(masalan: Toshkent sh., Chilonzor tumani)"
+        text = "📍 Korxona manzilini kiriting:(masalan: Toshkent sh., Chilonzor tumani)"
     else:
-        text = "📍 Geben Sie die Adresse ein:
-(z.B.: Berlin, Hauptstraße 1)"
+        text = "📍 Geben Sie die Adresse ein:(z.B.: Berlin, Hauptstraße 1)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return COMPANY_ADDRESS
@@ -373,11 +341,9 @@ async def company_address_handler(update: Update, context: ContextTypes.DEFAULT_
     context.user_data["company"]["address"] = address
 
     if language == "uz":
-        text = "🆔 INN (Identifikatsiya raqami) ni kiriting:
-(masalan: 123456789)"
+        text = "🆔 INN (Identifikatsiya raqami) ni kiriting:(masalan: 123456789)"
     else:
-        text = "🆔 Steuernummer eingeben:
-(z.B.: 1234567890)"
+        text = "🆔 Steuernummer eingeben:(z.B.: 1234567890)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return COMPANY_INN
@@ -395,11 +361,9 @@ async def company_inn_handler(update: Update, context: ContextTypes.DEFAULT_TYPE
     context.user_data["company"]["inn"] = inn
 
     if language == "uz":
-        text = "📞 Telefon raqamini kiriting:
-(masalan: +998 90 123 45 67)"
+        text = "📞 Telefon raqamini kiriting:(masalan: +998 90 123 45 67)"
     else:
-        text = "📞 Telefonnummer eingeben:
-(z.B.: +49 170 1234567)"
+        text = "📞 Telefonnummer eingeben:(z.B.: +49 170 1234567)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return COMPANY_PHONE
@@ -417,11 +381,9 @@ async def company_phone_handler(update: Update, context: ContextTypes.DEFAULT_TY
     context.user_data["company"]["phone"] = phone
 
     if language == "uz":
-        text = "📧 Email manzilini kiriting (ixtiyoriy):
-(yoki "o'tkazib yuborish" deb yozing)"
+        text = "📧 Email manzilini kiriting (ixtiyoriy):(yoki 'o'tkazib yuborish' deb yozing)"
     else:
-        text = "📧 E-Mail eingeben (optional):
-(oder "überspringen" schreiben)"
+        text = "📧 E-Mail eingeben (optional):(oder 'überspringen' schreiben)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return COMPANY_EMAIL
@@ -443,11 +405,9 @@ async def company_email_handler(update: Update, context: ContextTypes.DEFAULT_TY
         context.user_data["company"]["email"] = email_text
 
     if language == "uz":
-        text = "👤 Direktor F.I.O. ni kiriting:
-(masalan: Valiyev Alijon Alisherovich)"
+        text = "👤 Direktor F.I.O. ni kiriting:(masalan: Valiyev Alijon Alisherovich)"
     else:
-        text = "👤 Name des Geschäftsführers:
-(z.B.: Max Mustermann)"
+        text = "👤 Name des Geschäftsführers:(z.B.: Max Mustermann)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return COMPANY_DIRECTOR
@@ -681,15 +641,13 @@ async def report_select_company_callback(update: Update, context: ContextTypes.D
     if language == "uz":
         text = (
             f"✅ Korxona tanlandi: *{selected_company['name']}*\n\n"
-            f"🗑️ Chiqindi turini kiriting:
-"
+            f"🗑️ Chiqindi turini kiriting:"
             f"(masalan: Plastik idishlar, qog'oz, metall)"
         )
     else:
         text = (
             f"✅ Unternehmen ausgewählt: *{selected_company['name']}*\n\n"
-            f"🗑️ Abfallart eingeben:
-"
+            f"🗑️ Abfallart eingeben:"
             f"(z.B.: Plastikflaschen, Papier, Metall)"
         )
 
@@ -742,11 +700,9 @@ async def report_quantity_handler(update: Update, context: ContextTypes.DEFAULT_
     context.user_data["report_quantity"] = float(result)
 
     if language == "uz":
-        text = "📅 Hisobot sanasini kiriting:
-(masalan: 15.06.2026)"
+        text = "📅 Hisobot sanasini kiriting:(masalan: 15.06.2026)"
     else:
-        text = "📅 Berichtsdatum eingeben:
-(z.B.: 15.06.2026)"
+        text = "📅 Berichtsdatum eingeben:(z.B.: 15.06.2026)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return REPORT_DATE
@@ -770,9 +726,9 @@ async def report_date_handler(update: Update, context: ContextTypes.DEFAULT_TYPE
     context.user_data["report_date"] = result
 
     if language == "uz":
-        text = "📝 Qo'shimcha tavsif (ixtiyoriy):\n(yoki "o'tkazib yuborish" deb yozing)"
+        text = "📝 Qo'shimcha tavsif (ixtiyoriy):\n(yoki 'o'tkazib yuborish' deb yozing)"
     else:
-        text = "📝 Zusätzliche Beschreibung (optional):\n(oder "überspringen" schreiben)"
+        text = "📝 Zusätzliche Beschreibung (optional):\n(oder 'überspringen' schreiben)"
 
     await update.message.reply_text(text, reply_markup=get_cancel_keyboard(language))
     return REPORT_DESCRIPTION

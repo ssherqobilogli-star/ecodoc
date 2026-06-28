@@ -1,0 +1,79 @@
+# EcoDoc - Git ignore fayli
+# Bu fayllar GitHub'ga yuklanmaydi
+
+# ==========================================
+# MUHIT O'ZGARUVCHANLARI (XAVFSIZLIK)
+# ==========================================
+.env
+.env.local
+.env.production
+
+# ==========================================
+# PYTHON
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# VIRTUAL ENVIRONMENT
+# ==========================================
+venv/
+env/
+ENV/
+.venv
+
+# ==========================================
+# IDE / EDITORS
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ==========================================
+# MA'LUMOTLAR (DATA)
+# ==========================================
+# SQLite bazasi (katta bo'lishi mumkin)
+data/*.db
+data/*.db-journal
+
+# Yaratilgan hisobotlar
+# Eslatma: Railway'da vaqtinchalik fayllar o'chiriladi
+data/reports/*.docx
+data/reports/*.pdf
+
+# Log fayllar
+data/*.log
+
+# ==========================================
+# TEST
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ==========================================
+# RAILWAY / DEPLOY
+# ==========================================
+.railway/

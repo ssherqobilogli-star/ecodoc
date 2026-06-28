@@ -225,56 +225,30 @@ def get_welcome_message(language: str = "uz") -> str:
     """
     if language == "uz":
         return (
-            "👋 *EcoDoc ga xush kelibsiz!*
-
-"
-            "🏢 Bu bot ekologik chiqindi hujjatlarini AI yordamida avtomat yaratadi.
-
-"
-            "*Imkoniyatlar:*
-"
-            "• 🏢 Korxona ma'lumotlarini saqlash
-"
-            "• 🤖 AI yordamida professional hisobot
-"
-            "• 📄 Word (.docx) hujjat yaratish
-"
-            "• 📁 Hisobotlar arxivi
-
-"
-            "*Buyruqlar:*
-"
-            "/start - Botni ishga tushirish
-"
-            "/help - Yordam
-"
+            "👋 *EcoDoc ga xush kelibsiz!*\n"
+            "🏢 Bu bot ekologik chiqindi hujjatlarini AI yordamida avtomat yaratadi.\n"
+            "*Imkoniyatlar:*"
+            "• 🏢 Korxona ma'lumotlarini saqlash"
+            "• 🤖 AI yordamida professional hisobot"
+            "• 📄 Word (.docx) hujjat yaratish"
+            "• 📁 Hisobotlar arxivi\n"
+            "*Buyruqlar:*"
+            "/start - Botni ishga tushirish"
+            "/help - Yordam"
             "/language - Tilni o'zgartirish"
         )
     else:
         return (
-            "👋 *Willkommen bei EcoDoc!*
-
-"
-            "🏢 Dieser Bot erstellt automatisch ökologische Abfallberichte mit KI.
-
-"
-            "*Funktionen:*
-"
-            "• 🏢 Unternehmensdaten speichern
-"
-            "• 🤖 Professioneller KI-Bericht
-"
-            "• 📄 Word (.docx) Dokument erstellen
-"
-            "• 📁 Berichtsarchiv
-
-"
-            "*Befehle:*
-"
-            "/start - Bot starten
-"
-            "/help - Hilfe
-"
+            "👋 *Willkommen bei EcoDoc!*\n"
+            "🏢 Dieser Bot erstellt automatisch ökologische Abfallberichte mit KI.\n"
+            "*Funktionen:*"
+            "• 🏢 Unternehmensdaten speichern"
+            "• 🤖 Professioneller KI-Bericht"
+            "• 📄 Word (.docx) Dokument erstellen"
+            "• 📁 Berichtsarchiv\n"
+            "*Befehle:*"
+            "/start - Bot starten"
+            "/help - Hilfe"
             "/language - Sprache ändern"
         )
 
